@@ -13,13 +13,16 @@
 </head>
 
 <body>
+    <button onclick="playRound('rock', computerPlay())">Rock</button>
+    <button onclick="choose('paper')">Paper</button>
+    <button onclick="choose('scissors')">Scissors</button>
   <script>    
       function game(){
           let playerScore = 0;
           let computerScore = 0;
           let draws = 0;
           for (let i = 0; i < 5; i++) {
-              let playerSelection = prompt("Rock, Paper or Scissors?");
+              let playerSelection = playerPlay();
               let computerSelection = computerPlay();  
               let score = playRound(playerSelection, computerSelection);
               if (score === "win") {
@@ -40,6 +43,7 @@
       }
       function playRound(playerSelection, computerSelection) {
           let score
+          playerSelection = playerSelection.toLowerCase();
           switch(playerSelection) {
               case "rock":{
                   if (computerSelection === "rock") {
@@ -92,6 +96,11 @@
         } else if (randomize === 3) {
             return "scissors"
         }
+      }
+      
+      function playerPlay() {
+          playerSelection = prompt("Rock, Paper or Scissors?");
+          return playerSelection;
       }
       game();
   </script>
