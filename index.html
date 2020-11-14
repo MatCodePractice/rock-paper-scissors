@@ -5,104 +5,25 @@
   <meta charset="utf-8">
 
   <title>Rock Paper Scissors</title>
-  <meta name="description" content="The HTML5 Herald">
+  <meta name="description" content="Rock Paper Scissors">
   <meta name="author" content="SitePoint">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-    <button onclick="playRound('rock', computerPlay())">Rock</button>
-    <button onclick="choose('paper')">Paper</button>
-    <button onclick="choose('scissors')">Scissors</button>
-  <script>    
-      function game(){
-          let playerScore = 0;
-          let computerScore = 0;
-          let draws = 0;
-          for (let i = 0; i < 5; i++) {
-              let playerSelection = playerPlay();
-              let computerSelection = computerPlay();  
-              let score = playRound(playerSelection, computerSelection);
-              if (score === "win") {
-                  playerScore++;
-              } else if (score === "loose") {
-                  computerScore++;
-              } else if (score === "draw") {
-                  draws++;
-              }
-          }
-          if (playerScore > computerScore) {
-              alert("You win! You scored ${playerScore}. Computer scored ${computerScore}");
-          } else if (playerScore < computerScore) {
-              alert("You loose! You scored ${playerScore}. Computer scored ${computerScore}");
-          } else {
-              alert("It's a draw!");
-          }
-      }
-      function playRound(playerSelection, computerSelection) {
-          let score
-          playerSelection = playerSelection.toLowerCase();
-          switch(playerSelection) {
-              case "rock":{
-                  if (computerSelection === "rock") {
-                      score = "draw";
-                  } else if (computerSelection === "paper") {
-                      score =  "loose";
-                  } else if (computerSelection === "scissors") {
-                      score = "win";
-                  }
-                  break;
-              }
-              case "paper":{
-                  if (computerSelection === "rock") {
-                      score = "win";
-                  } else if (computerSelection === "paper") {
-                      score = "draw";
-                  } else if (computerSelection === "scissors") {
-                      score = "loose";
-                  }
-                  break;
-              }
-              case "scissors":{
-                  if (computerSelection === "rock") {
-                      score = "loose";
-                  } else if (computerSelection === "paper") {
-                      score = "win";
-                  } else if (computerSelection === "scissors") {
-                      score = "draw"
-                  }
-                  break;
-              }
-          }
-          if (score === "win") {
-              alert("You Win");
-          } else if (score === "loose") {
-              alert("You Loose");
-          } else if (score === "draw") {
-              alert("It's a Draw");
-          } else {
-              alert("Invalid input")
-          }
-          return score;
-      }
-      function computerPlay() {
-        let randomize = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-        if (randomize === 1) {
-            return "rock"
-        } else if (randomize === 2) {
-            return "paper"
-        } else if (randomize === 3) {
-            return "scissors"
-        }
-      }
-      
-      function playerPlay() {
-          playerSelection = prompt("Rock, Paper or Scissors?");
-          return playerSelection;
-      }
-      game();
-  </script>
+<ul>
+<li>Player score<p id="playerTracker">0</p></li>
+<li>Round<p id="round">0</p></li>
+<li class="right">Computer score<p id="computerTracker">0</p></li>
+</ul>
+<ul>
+    <li><button id="rock" onclick="playRound('rock', computerPlay())">Rock</button></li>
+    <li><button id="paper" onclick="playRound('paper', computerPlay())">Paper</button></li>
+    <li><button id="scissors" onclick="playRound('scissors', computerPlay())">Scissors</button></li>
+</ul>
+
+<script src="script.js"></script>
 </body>
 </html>
