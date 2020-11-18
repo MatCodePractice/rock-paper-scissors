@@ -1,3 +1,7 @@
+body {
+    background-image: url("images/background.jpg");
+    
+}
 ul {
     list-style: none;
     padding: 0;
@@ -13,6 +17,12 @@ button {
     height: 5rem;
     width: 5rem;
 }
+.scoreDiv {
+    padding: 25px;
+    font-size: 25px;
+    text-align: center;
+    border: 3px black;
+}
 #playerTracker {
     margin-left: 3rem;
 }
@@ -24,4 +34,16 @@ button {
 }    
 #scissors {
     background-image: url(images/scissors.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#paper {
+    background-image: url(images/paper.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#rock {
+    background-image: url(images/rock.jpg);
+    background-position: center;
+    background-size: cover;
 }

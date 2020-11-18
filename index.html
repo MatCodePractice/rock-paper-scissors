@@ -13,16 +13,21 @@
 </head>
 
 <body>
+<div>
 <ul>
 <li>Player score<p id="playerTracker">0</p></li>
 <li>Round<p id="round">0</p></li>
 <li class="right">Computer score<p id="computerTracker">0</p></li>
 </ul>
+</div>
+<div>
 <ul>
-    <li><button id="rock" onclick="playRound('rock', computerPlay())">Rock</button></li>
-    <li><button id="paper" onclick="playRound('paper', computerPlay())">Paper</button></li>
-    <li><button id="scissors" onclick="playRound('scissors', computerPlay())">Scissors</button></li>
+    <li><button id="rock" onclick="playRound('rock', computerPlay())"></button></li>
+    <li><button id="paper" onclick="playRound('paper', computerPlay())"></button></li>
+    <li><button id="scissors" onclick="playRound('scissors', computerPlay())"></button></li>
 </ul>
+</div>
+<div class="scoreDiv"></div>
 
 <script src="script.js"></script>
 </body>

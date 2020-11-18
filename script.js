@@ -1,6 +1,7 @@
 let playerScore = 0;
     let computerScore = 0;
     let round = 0;
+    let scoreDisplay = document.querySelector('.scoreDiv');
     function playRound(playerSelection, computerSelection) {
         playerSelection = playerSelection.toLowerCase();
         switch(playerSelection) {
@@ -54,19 +55,19 @@ let playerScore = 0;
     }
     function game() {
         if (score === "win") {
-            alert("You Win");
+            scoreDisplay.textContent = `You won!`;
             playerScore++;
             round++;
             document.getElementById("playerTracker").innerHTML = playerScore;
             document.getElementById("round").innerHTML = round;
         } else if (score === "loose") {
-            alert("You Loose");
+            scoreDisplay.textContent = "You lost!";
             computerScore++;
             round++;
             document.getElementById("computerTracker").innerHTML = computerScore;
             document.getElementById("round").innerHTML = round;
         } else if (score === "draw") {
-            alert("It's a Draw");
+            scoreDisplay.textContent = "It's a draw";
             round++;
             document.getElementById("round").innerHTML = round;
         }
